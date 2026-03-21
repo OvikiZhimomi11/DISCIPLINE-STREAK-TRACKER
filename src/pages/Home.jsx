@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Trophy } from 'lucide-react';
 import StreakRing from '@/components/streak/StreakRing';
 import CheckInButtons from '@/components/streak/CheckInButtons';
-import { getDailyQuote } from '@/lib/quotes';
+import { getDailyQuote } from '@/lib/quote';
 import { usePullToRefresh } from '@/hooks/usePullToRefresh';
 import PullIndicator from '@/components/ui/PullIndicator';
 

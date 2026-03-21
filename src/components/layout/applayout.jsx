@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Flame, BarChart3, Sparkles, Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
 
