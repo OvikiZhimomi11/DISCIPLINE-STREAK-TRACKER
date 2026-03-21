@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import QuoteCard from '@/components/motivation/QuoteCard';
-import quotes from '@/lib/quotes';
+import quotes from '@/lib/quote';
 
 const categories = ['all', 'discipline', 'focus', 'self-control'];
 
