@@ -1,0 +1,27 @@
+{
+  "name": "CheckIn",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date of the check-in"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "clean",
+        "relapse"
+      ],
+      "description": "Whether the user stayed clean or relapsed"
+    },
+    "note": {
+      "type": "string",
+      "description": "Optional note for the day"
+    }
+  },
+  "required": [
+    "date",
+    "status"
+  ]
+}
