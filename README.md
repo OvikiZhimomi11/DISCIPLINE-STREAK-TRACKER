@@ -146,7 +146,10 @@ Contributions are welcome. Feel free to open an issue or submit a pull request i
 ## 📄 License
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ea67e110dea71ee2783cf1998a030a396dcf403c
 ---
 
 ## ⭐ Support

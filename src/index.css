@@ -81,10 +81,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: hsl(var(--border));
+    outline-color: hsl(var(--ring) / 0.5);
   }
   body {
-    @apply bg-background text-foreground font-inter;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter);
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
     /* Prevent rubber-banding / bounce on iOS */
@@ -106,12 +109,12 @@
   }
   /* Non-interactive elements: no text selection */
   h1, h2, h3, h4, h5, h6, p, span, label, li, nav, header, footer {
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
   }
   /* Allow selection on inputs and content areas */
   input, textarea, [contenteditable] {
-    user-select: text;
     -webkit-user-select: text;
+    user-select: text;
   }
 }
