@@ -116,4 +116,15 @@
     -webkit-user-select: text;
     user-select: text;
   }
+
+  button,
+  input:where([type='button']),
+  input:where([type='reset']),
+  input:where([type='submit']) {
+    appearance: button;
+  }
+
+  [type='search'] {
+    appearance: textfield;
+  }
 }
