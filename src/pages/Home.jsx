@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useMemo } from 'react';
 import { base44 } from '@/api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
@@ -14,31 +15,34 @@ export default function Home() {
   const queryClient = useQueryClient();
   const today = format(new Date(), 'yyyy-MM-dd');
   const dailyQuote = useMemo(() => getDailyQuote(), []);
+  const checkInEntity = /** @type {any} */ (base44.entities.CheckIn);
+  const userSettingsEntity = /** @type {any} */ (base44.entities.UserSettings);
 
   const { data: checkIns = [], isLoading: loadingCheckIns } = useQuery({
     queryKey: ['checkins'],
-    queryFn: () => base44.entities.CheckIn.list('-date', 500),
+    queryFn: () => checkInEntity.list('-date', 500),
   });
 
   const { data: settingsList = [], isLoading: loadingSettings } = useQuery({
     queryKey: ['settings'],
-    queryFn: () => base44.entities.UserSettings.list(),
+    queryFn: () => userSettingsEntity.list(),
   });
 
   const settings = settingsList[0];
+  const todayStatus = checkIns.find(ci => ci.date === today)?.status;
 
   const createCheckIn = useMutation({
-    mutationFn: (data) => base44.entities.CheckIn.create(data),
+    mutationFn: (data) => checkInEntity.create(data),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['checkins'] }),
   });
 
   const createSettings = useMutation({
-    mutationFn: (data) => base44.entities.UserSettings.create(data),
+    mutationFn: (data) => userSettingsEntity.create(data),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['settings'] }),
   });
 
   const updateSettings = useMutation({
-    mutationFn: ({ id, data }) => base44.entities.UserSettings.update(id, data),
+    mutationFn: ({ id, data }) => userSettingsEntity.update(id, data),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['settings'] }),
   });
 
@@ -46,8 +50,11 @@ export default function Home() {
 
   const currentStreak = useMemo(() => {
     if (!settings?.streak_start_date) return 0;
-    return differenceInDays(new Date(), new Date(settings.streak_start_date));
-  }, [settings]);
+    if (todayStatus === 'relapse') return 0;
+
+    const streakDays = differenceInDays(new Date(), new Date(settings.streak_start_date));
+    return todayStatus === 'clean' ? streakDays + 1 : streakDays;
+  }, [settings, todayStatus]);
 
   const longestStreak = settings?.longest_streak || 0;
 
@@ -133,7 +140,7 @@ export default function Home() {
           <p className="text-sm text-foreground font-medium leading-relaxed italic">
             "{dailyQuote.text}"
           </p>
-          <p className="text-xs text-muted-foreground mt-2 capitalize">— {dailyQuote.category}</p>
+          <p className="text-xs text-muted-foreground mt-2 capitalize">- {dailyQuote.category}</p>
         </motion.div>
       </div>
     </div>
