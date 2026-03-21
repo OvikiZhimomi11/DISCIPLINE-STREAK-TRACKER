@@ -1,39 +1,154 @@
-**Welcome to your Base44 project** 
+# NoFap Streak Tracker
 
-**About**
+A simple and private streak tracker designed to help users build discipline, track progress, and stay accountable. The app allows users to monitor their streak, record relapses, and visualize their self-improvement journey.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+## 🚀 Features
 
-This project contains everything you need to run your app locally.
+* **Streak Counter**
 
-**Edit the code in your local development environment**
+  * Track current streak in days
+  * View longest streak achieved
+  * Automatically reset streak after relapse
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+* **Daily Check-in**
 
-**Prerequisites:** 
+  * Mark a day as successful
+  * Log relapses
+  * Add optional notes for each day
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+* **Statistics Dashboard**
+
+  * Total days tracked
+  * Total relapses
+  * Success rate percentage
+  * Visual progress overview
+
+* **Motivation System**
+
+  * Daily motivational quotes
+  * Random quote generator
+  * Focus on discipline, focus, and self-control
+
+* **Privacy First**
+
+  * No login required
+  * No cloud storage
+  * All data stored locally on the device
+
+* **Clean UI**
+
+  * Minimal interface
+  * Dark theme
+  * Fast and distraction-free experience
+
+---
+
+## 🛠 Tech Stack
+
+* **React (JSX)**
+* **JavaScript**
+* **Local Storage** for saving user data
+* **CSS / Tailwind (optional depending on implementation)**
+
+---
+
+## 📂 Project Structure
 
 ```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
+/src
+  /components
+    StreakCounter.jsx
+    DailyCheckin.jsx
+    Statistics.jsx
+    MotivationQuote.jsx
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+  /pages
+    Home.jsx
+    Stats.jsx
+    Settings.jsx
+
+  /utils
+    streakUtils.js
+    quoteGenerator.js
+
+  App.jsx
+  index.js
 ```
 
-Run the app: `npm run dev`
+---
 
-**Publish your changes**
+## ⚙️ Installation
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+Clone the repository:
 
-**Docs & Support**
+```
+git clone https://github.com/yourusername/nofap-streak-tracker.git
+```
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+Navigate to the project directory:
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+```
+cd nofap-streak-tracker
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Start the development server:
+
+```
+npm start
+```
+
+---
+
+## 📊 How It Works
+
+1. User checks in daily.
+2. The streak increases for each successful day.
+3. If the user records a relapse, the streak resets.
+4. Statistics update automatically to reflect progress.
+
+All data is stored locally using **browser local storage**, ensuring privacy and offline functionality.
+
+---
+
+## 🔒 Privacy
+
+This app is designed with privacy in mind:
+
+* No account required
+* No personal data collection
+* No external tracking
+* All data stays on the user's device
+
+---
+
+## 📈 Future Improvements
+
+* Calendar view for streak history
+* Optional PIN lock
+* Export streak data
+* Mobile PWA support
+* Additional motivational content
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome. Feel free to open an issue or submit a pull request if you would like to improve the project.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## ⭐ Support
+
+If you find this project helpful, please consider giving it a star.
