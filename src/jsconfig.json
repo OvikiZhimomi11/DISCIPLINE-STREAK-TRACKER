@@ -14,7 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "types": []
+    "types": ["vite/client"]
   },
   "include": ["components/**/*.js", "components/**/*.jsx", "pages/**/*.jsx", "*.jsx"],
   "exclude": ["../node_modules", "../dist", "vite-plugins", "components/ui", "api", "lib"]

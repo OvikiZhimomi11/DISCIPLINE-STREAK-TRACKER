@@ -11,7 +11,7 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 
 // @ts-ignore
-import AppLayout from '@/components/layout/AppLayout';
+import AppLayout from '@/components/layout/applayout';
 import PinGate from '@/components/PinGate';
 import Home from '@/pages/Home';
 import Stats from '@/pages/Stats';

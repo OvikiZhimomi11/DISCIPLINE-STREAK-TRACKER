@@ -33,8 +33,9 @@ const quotes = [
 
 export function getDailyQuote() {
   const today = new Date();
-  const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-  return quotes[dayOfYear % quotes.length];
+  const startOfYear = new Date(today.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((today.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24));
+  return quotes[dayOfYear % quotes.length] || quotes[0];
 }
 
 export function getRandomQuote() {
