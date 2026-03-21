@@ -95,9 +95,9 @@ export default function Settings() {
     }
     queryClient.clear();
     toast.success('Account data deleted');
-    // Sign out after a short delay
+    // Clear the local app data and return to the home screen.
     setTimeout(() => {
-      base44.auth.logout();
+      base44.auth.logout('/');
     }, 1200);
   };
 
