@@ -1,5 +1,5 @@
 # Discipline Streak Tracker
-
+live mode: https://discipline-streak-tracker.vercel.app
 
 A simple and private streak tracker designed to help users build discipline, track progress, and stay accountable. The app allows users to monitor their streak, record relapses, and visualize their self-improvement journey.
 
