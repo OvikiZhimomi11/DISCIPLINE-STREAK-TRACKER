@@ -252,7 +252,7 @@ export default function Settings() {
           transition={{ delay: 0.4 }}
           className="text-center py-6"
         >
-          <p className="text-xs text-muted-foreground">NoFap Streak Tracker</p>
+          <p className="text-xs text-muted-foreground">Discipline Streak Tracker</p>
           <p className="text-[10px] text-muted-foreground/60 mt-1">Your data stays private</p>
         </motion.div>
       </div>

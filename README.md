@@ -1,4 +1,4 @@
-# NoFap Streak Tracker
+# Discipline Streak Tracker
 Live Demo: https://no-fab-streak-tracker-q76guejye-ovikizhimomi11s-projects.vercel.app
 
 A simple and private streak tracker designed to help users build discipline, track progress, and stay accountable. The app allows users to monitor their streak, record relapses, and visualize their self-improvement journey.
@@ -83,13 +83,13 @@ A simple and private streak tracker designed to help users build discipline, tra
 Clone the repository:
 
 ```
-git clone https://github.com/yourusername/nofap-streak-tracker.git
+git clone https://github.com/yourusername/discipline-streak-tracker.git
 ```
 
 Navigate to the project directory:
 
 ```
-cd nofap-streak-tracker
+cd discipline-streak-tracker
 ```
 
 Install dependencies:
@@ -147,10 +147,6 @@ Contributions are welcome. Feel free to open an issue or submit a pull request i
 ## 📄 License
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ea67e110dea71ee2783cf1998a030a396dcf403c
 ---
 
 ## ⭐ Support
